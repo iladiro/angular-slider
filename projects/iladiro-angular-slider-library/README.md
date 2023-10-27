@@ -16,11 +16,11 @@ You can use the default template or pass your custom template following some con
 
 ## Getting Setup
 
-  Use ```<iladiro-slider></iladiro-slider>``` selector to show the slider
+  Use ```<iladiro-angular-slider></iladiro-angular-slider>``` selector to show the slider
 
   Note: The example below shows the mandatory data! Slider Widget accept only Slide object type array.
     
-    <iladiro-slider [slideList]="list"></iladiro-slider>
+    <iladiro-angular-slider [slideList]="list"></iladiro-angular-slider>
 
 ## Interface
 Convert your array in an Slide object array. As you can see, not all properties are required.<br><br>
@@ -39,29 +39,29 @@ Import IladiroAngularSlide from ```import { IladiroAngularSlide } from '@iladiro
   Note: <strong>Default template</strong><br>
     <pre>
         ```
-        <slider-widget
+        <iladiro-angular-slider
             [slideList]="list">
-        </slider-widget>
+        </iladiro-angular-slider>
         ```
     </pre>
 
   Note: <strong>Custom template</strong><br>
     <pre>
         ```
-        <slider-widget
+        <iladiro-angular-slider
             [slideList]="list">
             [maxVisibleSlides]="2"
             [paginatorArrowNext]="'fa fa-arrow-circle-o-right fa-4x'"
             [paginatorArrowPrev]="'fa fa-arrow-circle-o-left fa-4x'"
             [paginatorTemplate]="'templateOne'">
-        </slider-widget>
+        </iladiro-angular-slider>
         ```
     </pre>
 
   Note: <strong>Custom dynamic template</strong><br>
     <pre>
         ```
-        <slider-widget
+        <iladiro-angular-slider
             [maxVisibleSlides]="1"
             [paginatorArrowNext]="'fa fa-arrow-circle-o-right fa-4x'"
             [paginatorArrowPrev]="'fa fa-arrow-circle-o-left fa-4x'"
@@ -84,7 +84,7 @@ Import IladiroAngularSlide from ```import { IladiroAngularSlide } from '@iladiro
                     [direction]="direction">
                 </your-template>
             </ng-template>
-        </slider-widget>
+        </iladiro-angular-slider>
         ```
     </pre>
 
@@ -127,7 +127,7 @@ You can choose which type of <strong>paginator</strong> to use, there are three 
 ## Events
   Event name | Return | Description | Example
   ------------ | ------------- | ------------- | -------------
-  goNextEvent | ``` Object Es. {page: 2, direction: 'next'} ``` | Allows you to capture the event when the pager is used to move to the next slide | ```<slider-widget (goNextEvent)="console.log($event)"></slider-widget>```
-  goPrevEvent | ``` Object Es. {page: 2, direction: 'prev'} ``` | Allows you to capture the event when the pager is used to move to the previous slide | ```<slider-widget (goPrevEvent)="console.log($event)"></slider-widget>```
-  goFirstEvent | ``` Object Es. {page: 2, direction: 'first'} ``` | Allows you to capture the event when the pager is used to return to the first slide | ```<slider-widget (goFirstEvent)="console.log($event)"></slider-widget>```
-  goLastEvent | ``` Object Es. {page: 2, direction: 'last'} ``` | Allows you to capture the event when the pager is used to go back to the last slide | ```<slider-widget (goLastEvent)="console.log($event)"></slider-widget>```
+  goNextEvent | ``` Object Es. {page: 2, direction: 'next'} ``` | Allows you to capture the event when the pager is used to move to the next slide | ```<iladiro-angular-slider (goNextEvent)="console.log($event)"></iladiro-angular-slider>```
+  goPrevEvent | ``` Object Es. {page: 2, direction: 'prev'} ``` | Allows you to capture the event when the pager is used to move to the previous slide | ```<iladiro-angular-slider (goPrevEvent)="console.log($event)"></iladiro-angular-slider>```
+  goFirstEvent | ``` Object Es. {page: 2, direction: 'first'} ``` | Allows you to capture the event when the pager is used to return to the first slide | ```<iladiro-angular-slider (goFirstEvent)="console.log($event)"></iladiro-angular-slider>```
+  goLastEvent | ``` Object Es. {page: 2, direction: 'last'} ``` | Allows you to capture the event when the pager is used to go back to the last slide | ```<iladiro-angular-slider (goLastEvent)="console.log($event)"></iladiro-angular-slider>```
