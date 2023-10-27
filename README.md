@@ -10,7 +10,9 @@ You can use the default template or pass your custom template following some con
 
 ## Before start
 1. npm i @iladiro/angular-slider<br>
-1. Import IladiroSliderModule into your module from "import { IladiroSliderModule } from '@iladiro/angular-slider';"
+1. Make sure to install ```"@fortawesome/fontawesome-free": "^6.4.0"```
+1. And import in your style ```@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';```
+1. Import ```IladiroSliderModule``` into your module from ```"import { IladiroSliderModule } from '@iladiro/angular-slider';"```
 
 ## Getting Setup
 
