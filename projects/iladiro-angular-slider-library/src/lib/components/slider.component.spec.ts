@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SliderComponent } from './slider.component';
+import { IladiroAngularSliderComponent } from './slider.component';
 
-describe('SliderComponent', () => {
-  let component: SliderComponent;
-  let fixture: ComponentFixture<SliderComponent>;
+describe('IladiroAngularSliderComponent', () => {
+  let component: IladiroAngularSliderComponent;
+  let fixture: ComponentFixture<IladiroAngularSliderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SliderComponent ]
+      declarations: [ IladiroAngularSliderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SliderComponent);
+    fixture = TestBed.createComponent(IladiroAngularSliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

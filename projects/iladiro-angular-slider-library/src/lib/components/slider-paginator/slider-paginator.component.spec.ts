@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SliderPaginatorComponent } from './slider-paginator.component';
+import { IladiroAngularSliderPaginatorComponent } from './slider-paginator.component';
 
-describe('SliderPaginatorComponent', () => {
-  let component: SliderPaginatorComponent;
-  let fixture: ComponentFixture<SliderPaginatorComponent>;
+describe('IladiroAngularSliderPaginatorComponent', () => {
+  let component: IladiroAngularSliderPaginatorComponent;
+  let fixture: ComponentFixture<IladiroAngularSliderPaginatorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SliderPaginatorComponent ]
+      declarations: [ IladiroAngularSliderPaginatorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SliderPaginatorComponent);
+    fixture = TestBed.createComponent(IladiroAngularSliderPaginatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,74 +1,71 @@
-<!-- <p>Pagina corrente: {{currentPage}}</p>
-<p>Totale pagine: {{totalPages}}</p> -->
-
 <ng-container *ngIf="template === 'default'">
-    <ul *ngIf="totalPages" class="slider-paginator slider-paginator--default">
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goFirst()" [disabled]="currentPage === 1">
+    <ul *ngIf="totalPages" class="iladiro-angular-slider-paginator iladiro-angular-slider-paginator--default">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goFirst()" [disabled]="currentPage === 1">
                 <i [class]="arrowStart"></i>
             </button>
         </li>
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goPrev()" [disabled]="currentPage === 1">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goPrev()" [disabled]="currentPage === 1">
                 <i [class]="arrowPrev"></i>
             </button>
         </li>
-        <li class="slider-paginator__item slider-paginator__item-numbers">{{currentPage}} di <span>{{totalPages}}</span></li>
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goNext()" [disabled]="currentPage === totalPages">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-numbers">{{currentPage}} di <span>{{totalPages}}</span></li>
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goNext()" [disabled]="currentPage === totalPages">
                 <i [class]="arrowNext"></i>
             </button>
         </li>
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goLast()" [disabled]="currentPage === totalPages">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goLast()" [disabled]="currentPage === totalPages">
                 <i [class]="arrowEnd"></i>
             </button>
         </li>
     </ul>
 </ng-container>
 <ng-container *ngIf="template === 'templateOne'">
-    <ul *ngIf="totalPages" class="slider-paginator slider-paginator--templateOne">
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goPrev()" [disabled]="currentPage === 1">
+    <ul *ngIf="totalPages" class="iladiro-angular-slider-paginator iladiro-angular-slider-paginator--templateOne">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goPrev()" [disabled]="currentPage === 1">
                 <i [class]="arrowPrev"></i>
             </button>
         </li>       
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goNext()" [disabled]="currentPage === totalPages">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goNext()" [disabled]="currentPage === totalPages">
                 <i [class]="arrowNext"></i>
             </button>
         </li>
     </ul>
 </ng-container>
 <ng-container *ngIf="template === 'templateTwo'">
-    <ul *ngIf="totalPages" class="slider-paginator slider-paginator--default">
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goFirst()" [disabled]="currentPage === 1">
+    <ul *ngIf="totalPages" class="iladiro-angular-slider-paginator iladiro-angular-slider-paginator--default">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goFirst()" [disabled]="currentPage === 1">
                 <i [class]="arrowStart"></i>
             </button>
         </li>
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goPrev()" [disabled]="currentPage === 1">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goPrev()" [disabled]="currentPage === 1">
                 <i [class]="arrowPrev"></i>
             </button>
         </li>
-        <li class="slider-paginator__item slider-paginator__item-numbers" 
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-numbers" 
             [class.selected]="page === currentPage" 
             *ngFor="let page of paginatorList">
-            <button class="slider-paginator__button" (click)="goTo(page)" [disabled]="page === currentPage">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goTo(page)" [disabled]="page === currentPage">
                 {{page}}
             </button>
            <!--  <ng-template #morePages>
-                <button class="slider-paginator__button" (click)="loadMorePges()">...</button>
+                <button class="iladiro-angular-slider-paginator__button" (click)="loadMorePges()">...</button>
             </ng-template> -->
         </li>
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goNext()" [disabled]="currentPage === totalPages">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goNext()" [disabled]="currentPage === totalPages">
                 <i [class]="arrowNext"></i>
             </button>
         </li>
-        <li class="slider-paginator__item slider-paginator__item-arrow">
-            <button class="slider-paginator__button" (click)="goLast()" [disabled]="currentPage === totalPages">
+        <li class="iladiro-angular-slider-paginator__item iladiro-angular-slider-paginator__item-arrow">
+            <button class="iladiro-angular-slider-paginator__button" (click)="goLast()" [disabled]="currentPage === totalPages">
                 <i [class]="arrowEnd"></i>
             </button>
         </li>

@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
-import { SliderComponent } from './components/slider.component';
-import { SliderPaginatorComponent } from './components/slider-paginator/slider-paginator.component';
-import { SliderCardComponent } from './components/slider-card/slider-card.component';
+import { IladiroAngularSliderComponent } from './components/slider.component';
+import { IladiroAngularSliderPaginatorComponent } from './components/slider-paginator/slider-paginator.component';
+import { IladiroAngularSliderCardComponent } from './components/slider-card/slider-card.component';
 import { CommonModule } from '@angular/common';
 
 
 
 @NgModule({
   declarations: [
-    SliderComponent,
-    SliderPaginatorComponent,
-    SliderCardComponent
+    IladiroAngularSliderComponent,
+    IladiroAngularSliderPaginatorComponent,
+    IladiroAngularSliderCardComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SliderComponent,
-    SliderPaginatorComponent,
-    SliderCardComponent
+    IladiroAngularSliderComponent,
+    IladiroAngularSliderPaginatorComponent,
+    IladiroAngularSliderCardComponent
   ]
 })
 export class IladiroAngularSliderLibraryModule { }

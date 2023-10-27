@@ -1,19 +1,19 @@
-<a [href]="slide.link" class="slider-card {{activeClass}}">
-    <figure class="slider-card__figure">
-        <img class="slider-card__figure-image" [src]="slide.mediaSrc" alt="Trulli" *ngIf="slide?.mediaSrc">
-        <figcaption class="slider-card__figure-label text-uppercase" *ngIf="slide?.tag">
+<a [href]="slide.link" class="iladiro-angular-slider-card {{activeClass}}">
+    <figure class="iladiro-angular-slider-card__figure">
+        <img class="iladiro-angular-slider-card__figure-image" [src]="slide.mediaSrc" [alt]="slide.tag" *ngIf="slide?.mediaSrc">
+        <figcaption class="iladiro-angular-slider-card__figure-label text-uppercase" *ngIf="slide?.tag">
             {{slide.tag}}
         </figcaption>
     </figure>
-    <div class="slider-card__body" *ngIf="slide.title || slide.link">
-        <h1 class="slider-card__body--title" *ngIf="slide.title">{{slide.title}}</h1>
-        <p class="slider-card__body--description">{{slide.description}}</p>
-        <a [href]="slide.link" target="_blank" class="slider-card__body--cta" *ngIf="slide.link">
+    <div class="iladiro-angular-slider-card__body" *ngIf="slide.title || slide.link">
+        <h1 class="iladiro-angular-slider-card__body--title" *ngIf="slide.title">{{slide.title}}</h1>
+        <p class="iladiro-angular-slider-card__body--description">{{slide.description}}</p>
+        <a [href]="slide.link" target="_blank" class="iladiro-angular-slider-card__body--cta" *ngIf="slide.link">
             <ng-container *ngIf="slide?.cta; else defaultCta">
                 {{slide.cta}}
             </ng-container>
             <ng-template #defaultCta>
-                Leggi
+                Read
             </ng-template>
         </a>
     </div>    

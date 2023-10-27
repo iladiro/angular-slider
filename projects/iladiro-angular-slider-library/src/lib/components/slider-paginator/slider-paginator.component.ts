@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 @Component({
-  selector: 'slider-paginator',
+  selector: 'iladiro-angular-slider-paginator',
   templateUrl: './slider-paginator.component.html',
   styleUrls: ['./slider-paginator.component.scss']
 })
-export class SliderPaginatorComponent implements OnInit {
+export class IladiroAngularSliderPaginatorComponent implements OnInit {
 
   @Input() maxVisiblePages!: number;
   @Input() totalPages!: number;

@@ -1,18 +1,18 @@
 import { ChangeDetectorRef, Component, ContentChild, ElementRef, EventEmitter, Input, Output, QueryList, SimpleChanges, TemplateRef, ViewChild, ViewChildren } from '@angular/core';
 
 // Interfaces
-import { Slide } from '../interfaces/slide.interface';
-import { ConfigSlider } from '../interfaces/config-slider.interface';
+import { IladiroAngularSlide } from '../interfaces/slide.interface';
+import { IladiroAngularConfigSlider } from '../interfaces/config-slider.interface';
 
 
 @Component({
-  selector: 'iladiro-slider',
+  selector: 'iladiro-angular-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent {
+export class IladiroAngularSliderComponent {
 
-  @Input() slideList: Slide[] = [];
+  @Input() slideList: IladiroAngularSlide[] = [];
   @Input() customClass: string = '';
   @Input() spaceBetweenSlide = 12;
 
@@ -44,7 +44,7 @@ export class SliderComponent {
   
   constructor(public cdRef:ChangeDetectorRef) { }
 
-  setSlideByIndex(config: ConfigSlider): void {    
+  setSlideByIndex(config: IladiroAngularConfigSlider): void {    
     this.items.forEach(item => {  
       const translate = item.nativeElement.clientWidth * config.index;  
       item.nativeElement.attributes['style'].value = this.calcTranslation(config.index, this.wrapperWidth, translate, item.nativeElement.clientWidth);
@@ -56,7 +56,7 @@ export class SliderComponent {
     this.sendPaginationEvent(config);
   }
 
-  sendPaginationEvent(config: ConfigSlider): void {
+  sendPaginationEvent(config: IladiroAngularConfigSlider): void {
     const obj = {
       page: config.page,
       direction: config.direction

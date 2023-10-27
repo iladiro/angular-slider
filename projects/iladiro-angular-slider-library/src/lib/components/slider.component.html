@@ -1,14 +1,14 @@
-<div class="slider {{customClass}}" [class.onlyOne]="slideList.length === 1">
-    <div class="slider__wrap" #sliderWrap>
-        <div class="slider__main" #sliderMain>
+<div class="iladiro-angular-slider {{customClass}}" [class.onlyOne]="slideList.length === 1">
+    <div class="iladiro-angular-slider__wrap" #sliderWrap>
+        <div class="iladiro-angular-slider__main" #sliderMain>
             <div #item 
-                class="slider__item" 
-                [ngClass]="customTemplate ? 'slider__item--custom' : 'slider__item--default'" 
+                class="iladiro-angular-slider__item" 
+                [ngClass]="customTemplate ? 'iladiro-angular-slider__item--custom' : 'iladiro-angular-slider__item--default'" 
                 [ngStyle]="{'transform': 'translateX(0px);'}"
                 [style.paddingRight]="spaceBetweenSlide + 'px'"                
                 *ngFor="let slide of slideList; let i = index; let first = first; let last = last;"
             >
-                <div class="slider__content" [style.width]="slideWidth + 'px'"  [class]="customTemplate ? 'slider__content--custom' : 'slider__content--default'">                        
+                <div class="iladiro-angular-slider__content" [style.width]="slideWidth + 'px'"  [class]="customTemplate ? 'iladiro-angular-slider__content--custom' : 'iladiro-angular-slider__content--default'">                        
                     <ng-container 
                         [ngTemplateOutlet]="customTemplate || defaultTemplate" 
                         [ngTemplateOutletContext]="{

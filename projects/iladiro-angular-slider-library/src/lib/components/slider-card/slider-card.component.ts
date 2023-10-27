@@ -1,14 +1,14 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { Slide } from '../../interfaces/slide.interface';
+import { IladiroAngularSlide } from '../../interfaces/slide.interface';
 
 @Component({
-  selector: 'slider-card',
+  selector: 'iladiro-angular-slider-card',
   templateUrl: './slider-card.component.html',
   styleUrls: ['./slider-card.component.scss']
 })
-export class SliderCardComponent implements OnInit, OnChanges {
+export class IladiroAngularSliderCardComponent implements OnInit, OnChanges {
 
-  @Input() slide!: Slide;
+  @Input() slide!: IladiroAngularSlide;
   @Input() index!: number;
   @Input() activeIndex!: number;
   @Input() first!: boolean;

@@ -1,4 +1,4 @@
-export interface Slide {
+export interface IladiroAngularSlide {
     link?: string;    
     mediaSrc: string;
     tag?: string;
