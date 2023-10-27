@@ -1,17 +1,18 @@
-# IladiroAngularSliderLibrary
+# IladiroAngularSliderLibrary Documentation
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
-
-# Slider Documentation
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.<br><br>
+Angular Slider plugin is flexible and easily customizable
 
 ## Description
 You can use the default template or pass your custom template following some configurations.
 
-![Alt text](./projects/slider/src/lib/documentation/images/default-card.png?raw=true "Default Card")
+![Alt text](./projects/iladiro-angular-slider-library/screenshots/default-card.png?raw=true "Default Card")
 
 ## Before start
 1. npm i @iladiro/angular-slider<br>
-1. Import IladiroSliderModule into your module from "import { IladiroSliderModule } from '@iladiro/angular-slider';"
+1. Make sure to install ```"@fortawesome/fontawesome-free": "^6.4.0"```
+1. And import in your style ```@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';```
+1. Import ```IladiroSliderModule``` into your module from ```"import { IladiroSliderModule } from '@iladiro/angular-slider';"```
 
 ## Getting Setup
 
@@ -95,13 +96,13 @@ You can choose which type of <strong>paginator</strong> to use, there are three 
 <pre>
     <div style="display: flex">
         <div>
-            <img src="./projects/slider/src/lib/documentation/images/paginator-default.png">
+            <img src="./projects/iladiro-angular-slider-library/screenshots/paginator-default.png">
         </div>
         <div>
-            <img src="./projects/slider/src/lib/documentation/images/paginator-template-one.png">
+            <img src="./projects/iladiro-angular-slider-library/screenshots/paginator-template-one.png">
         </div>
         <div>
-            <img src="./projects/slider/src/lib/documentation/images/paginator-template-two.png">
+            <img src="./projects/iladiro-angular-slider-library/screenshots/paginator-template-two.png">
         </div>
     </div>
 </pre>
