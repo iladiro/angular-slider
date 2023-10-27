@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ContentChild, ElementRef, EventEmitter, Input, Output, QueryList, TemplateRef, ViewChild, ViewChildren, AfterViewInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ContentChild, ElementRef, EventEmitter, Input, Output, QueryList, TemplateRef, ViewChild, ViewChildren, AfterViewInit, SimpleChanges, OnChanges } from '@angular/core';
 
 // Interfaces
 import { IladiroAngularSlide } from '../interfaces/slide.interface';
@@ -10,7 +10,7 @@ import { IladiroAngularConfigSlider } from '../interfaces/config-slider.interfac
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class IladiroAngularSliderComponent implements AfterViewInit {
+export class IladiroAngularSliderComponent implements OnChanges, AfterViewInit {
 
   @Input() slideList: IladiroAngularSlide[] = [];
   @Input() customClass = '';
@@ -42,7 +42,7 @@ export class IladiroAngularSliderComponent implements AfterViewInit {
   @ViewChildren('item') items!:  QueryList<any>;
   @ContentChild('customTemplate') customTemplate!: TemplateRef<any>;
   
-  constructor(public cdRef:ChangeDetectorRef) { }
+  constructor(public cdRef: ChangeDetectorRef) { }
 
   setSlideByIndex(config: IladiroAngularConfigSlider): void {    
     this.items.forEach(item => {  
@@ -83,8 +83,13 @@ export class IladiroAngularSliderComponent implements AfterViewInit {
     return `transform: translateX(-${translate}px); padding-right: ${this.spaceBetweenSlide}px`;
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+  }
+
   ngAfterViewInit() {
     if(this.maxVisibleSlides) {
+      console.log("entrato");
       this.wrapperWidth = this.sliderWrap?.nativeElement?.clientWidth;
       if(this.slideList.length > this.maxVisibleSlides) {
         if(this.maxVisibleSlides > 1) {
