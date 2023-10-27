@@ -4,6 +4,8 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 # Slider Documentation
 
+Angular Slider plugin is flexible and easily customizable
+
 ## Description
 You can use the default template or pass your custom template following some configurations.
 
