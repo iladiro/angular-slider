@@ -16,9 +16,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   exports: [
-    IladiroAngularSliderComponent,
-    IladiroAngularSliderPaginatorComponent,
-    IladiroAngularSliderCardComponent
+    IladiroAngularSliderComponent
   ]
 })
 export class IladiroAngularSliderLibraryModule { }
