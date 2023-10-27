@@ -7,12 +7,12 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 export class IladiroAngularSliderPaginatorComponent implements OnChanges {
 
   @Input() totalPages!: number;
-  @Input() maxVisiblePages = 5;
-  @Input() template = 'default';
-  @Input() arrowStart = 'fa fa-angle-double-left';
-  @Input() arrowEnd = 'fa fa-angle-double-right';
-  @Input() arrowNext = 'fa fa-chevron-right';
-  @Input() arrowPrev = 'fa fa-chevron-left';
+  @Input() maxVisiblePages!: number;
+  @Input() template!: string;
+  @Input() arrowStart!: string;
+  @Input() arrowEnd!: string;
+  @Input() arrowNext!: string;
+  @Input() arrowPrev!: string;
   @Output() selectedPageEvent = new EventEmitter();
 
   currentPage = 1;
@@ -108,7 +108,7 @@ export class IladiroAngularSliderPaginatorComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    //console.log(changes.totalPages);
+    console.log(changes);
     if(this.template === 'templateTwo') {
       if(changes['maxVisiblePages']?.currentValue) {
         this.paginatorList = this.generatePaginatorList(1, this.maxVisiblePages ? this.maxVisiblePages : this.totalPages);
