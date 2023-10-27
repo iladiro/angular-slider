@@ -24,7 +24,7 @@ You can use the default template or pass your custom template following some con
 
 ## Interface
 Convert your array in an Slide object array. As you can see, not all properties are required.<br><br>
-Import IladiroAngularSlide from ```import { IladiroAngularSlide } from '../../interfaces/slide.interface';```
+Import IladiroAngularSlide from ```import { IladiroAngularSlide } from '@iladiro/angular-slider/lib/interfaces/slide.interface';```
 
     interface IladiroAngularSlide {
         link?: string;
