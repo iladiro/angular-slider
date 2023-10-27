@@ -7,7 +7,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 ## Description
 You can use the default template or pass your custom template following some configurations.
 
-![Alt text](./projects/iladiro-angular-slider/src/lib/documentation/images/default-card.png?raw=true "Default Card")
+![Alt text](./projects/iladiro-angular-slider-library/src/lib/documentation/images/default-card.png?raw=true "Default Card")
 
 ## Before start
 1. npm i @iladiro/angular-slider<br>
