@@ -21,20 +21,20 @@
                         }">
                     </ng-container>
                     <ng-template #defaultTemplate>
-                        <slider-card                        
+                        <iladiro-angular-slider-card                        
                             [slide]="slide" 
                             [index]="i"
                             [activeIndex]="activeIndex"
                             [first]="first"
                             [last]="last"
                             [direction]="currentDirection">
-                        </slider-card> 
+                        </iladiro-angular-slider-card> 
                     </ng-template>                                           
                 </div>
             </div>            
         </div>
     </div>    
-    <slider-paginator 
+    <iladiro-angular-slider-paginator 
         [maxVisiblePages]="paginatorMaxVisiblePages"
         [arrowStart]="paginatorArrowStart"
         [arrowEnd]="paginatorArrowEnd"
@@ -43,5 +43,5 @@
         [template]="paginatorTemplate"
         [totalPages]="slideList.length" 
         (selectedPageEvent)="setSlideByIndex($event)"
-    ></slider-paginator>
+    ></iladiro-angular-slider-paginator>
 </div>
