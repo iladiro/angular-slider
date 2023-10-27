@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 @Component({
   selector: 'iladiro-angular-slider-paginator',
   templateUrl: './slider-paginator.component.html',
   styleUrls: ['./slider-paginator.component.scss']
 })
-export class IladiroAngularSliderPaginatorComponent implements OnInit {
+export class IladiroAngularSliderPaginatorComponent implements OnChanges {
 
   @Input() maxVisiblePages!: number;
   @Input() totalPages!: number;
@@ -17,8 +17,6 @@ export class IladiroAngularSliderPaginatorComponent implements OnInit {
 
   currentPage = 1;
   paginatorList: number[] = [];
-
-  constructor() { }
 
   sendEvent(direction: string): void {
     this.selectedPageEvent.emit({
@@ -49,7 +47,7 @@ export class IladiroAngularSliderPaginatorComponent implements OnInit {
     // da riattivare per implementazione sul template 2
     if(this.template === 'templateTwo') {          
       this.decreasePagination();   
-    };
+    }
     // end
     this.sendEvent('prev');
   }
@@ -101,15 +99,13 @@ export class IladiroAngularSliderPaginatorComponent implements OnInit {
   generatePaginatorList(startFrom: number, untilTo: number): number[] {
     /* console.log("startFrom", startFrom);
     console.log("untilTo", untilTo); */
-    let pages: number[] = [];
+    const pages: number[] = [];
     for (let i = startFrom; i <= untilTo; i++) {
       pages.push(i);
-    };
+    }
 
     return pages;
   }
-
-  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges) {
     //console.log(changes.totalPages);

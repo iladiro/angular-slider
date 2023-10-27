@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { IladiroAngularSlide } from '../../interfaces/slide.interface';
 
 @Component({
@@ -6,7 +6,7 @@ import { IladiroAngularSlide } from '../../interfaces/slide.interface';
   templateUrl: './slider-card.component.html',
   styleUrls: ['./slider-card.component.scss']
 })
-export class IladiroAngularSliderCardComponent implements OnInit, OnChanges {
+export class IladiroAngularSliderCardComponent implements OnChanges {
 
   @Input() slide!: IladiroAngularSlide;
   @Input() index!: number;
@@ -16,10 +16,6 @@ export class IladiroAngularSliderCardComponent implements OnInit, OnChanges {
   @Input() direction!: string;
 
   activeClass!: string;
-
-  constructor() { }
-
-  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['activeIndex'].currentValue === this.index) {      

@@ -12,7 +12,7 @@ You can use the default template or pass your custom template following some con
 1. npm i @iladiro/angular-slider<br>
 1. Make sure to install ```"@fortawesome/fontawesome-free": "^6.4.0"```
 1. And import in your style ```@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';```
-1. Import ```IladiroSliderModule``` into your module from ```"import { IladiroSliderModule } from '@iladiro/angular-slider';"```
+1. Import ```IladiroAngularSliderLibraryModule``` into your module from ```import { IladiroAngularSliderLibraryModule } from '@iladiro/angular-slider';```
 
 ## Getting Setup
 
@@ -23,9 +23,10 @@ You can use the default template or pass your custom template following some con
     <iladiro-slider [slideList]="list"></iladiro-slider>
 
 ## Interface
-Convert your array in an Slide object array. As you can see, not all properties are required.
+Convert your array in an Slide object array. As you can see, not all properties are required.<br><br>
+Import IladiroAngularSlide from ```import { IladiroAngularSlide } from '../../interfaces/slide.interface';```
 
-    interface Slide {
+    interface IladiroAngularSlide {
         link?: string;
         mediaSrc: string;
         tag?: string;
