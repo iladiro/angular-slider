@@ -1,0 +1,41 @@
+@import '../styles/mixin.scss';
+
+.slider {
+    $this: &;
+    font-family: 'Lato', sans-serif;
+    &__wrap {
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    &__main {
+        width: max-content;
+        @include flex();
+        @include flex-align(stretch);
+        #{$this}__item {
+            //padding: 0 12px 0 0;
+            @include transition(transform .6s ease-in-out);
+            width: 100%;
+            #{$this}__content {                  
+                @include size(455px, 100%);
+                position: relative;                
+                &--default {
+                    background: #003489;
+                    border-radius: 6px;   
+                }
+            }
+        }        
+    }
+    &.onlyOne {
+        #{$this}__main {
+            width: 100%;
+            #{$this}__item {
+                padding: 0;
+                width: 100%;
+                #{$this}__content {
+                    width: 100%!important;                   
+                }
+            }            
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<div class="slider {{customClass}}" [class.onlyOne]="slideList.length === 1">
+    <div class="slider__wrap" #sliderWrap>
+        <div class="slider__main" #sliderMain>
+            <div #item 
+                class="slider__item" 
+                [ngClass]="customTemplate ? 'slider__item--custom' : 'slider__item--default'" 
+                [ngStyle]="{'transform': 'translateX(0px);'}"
+                [style.paddingRight]="spaceBetweenSlide + 'px'"                
+                *ngFor="let slide of slideList; let i = index; let first = first; let last = last;"
+            >
+                <div class="slider__content" [style.width]="slideWidth + 'px'"  [class]="customTemplate ? 'slider__content--custom' : 'slider__content--default'">                        
+                    <ng-container 
+                        [ngTemplateOutlet]="customTemplate || defaultTemplate" 
+                        [ngTemplateOutletContext]="{
+                            slide: slide, 
+                            first: first, 
+                            last: last, 
+                            index: i, 
+                            activeIndex: activeIndex, 
+                            direction: currentDirection
+                        }">
+                    </ng-container>
+                    <ng-template #defaultTemplate>
+                        <slider-card                        
+                            [slide]="slide" 
+                            [index]="i"
+                            [activeIndex]="activeIndex"
+                            [first]="first"
+                            [last]="last"
+                            [direction]="currentDirection">
+                        </slider-card> 
+                    </ng-template>                                           
+                </div>
+            </div>            
+        </div>
+    </div>    
+    <slider-paginator 
+        [maxVisiblePages]="paginatorMaxVisiblePages"
+        [arrowStart]="paginatorArrowStart"
+        [arrowEnd]="paginatorArrowEnd"
+        [arrowNext]="paginatorArrowNext"
+        [arrowPrev]="paginatorArrowPrev"
+        [template]="paginatorTemplate"
+        [totalPages]="slideList.length" 
+        (selectedPageEvent)="setSlideByIndex($event)"
+    ></slider-paginator>
+</div>

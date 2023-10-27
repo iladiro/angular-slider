@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Slider documentation</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">        
+      </head>    
+    <body>
+
+        <div class="container">
+            <h1 class="mb-5 text-center">Slider Documentation</h1>
+            <div class="mb-5">                
+                <h4 class="mb-2 text-uppercase">Description</h4>
+                <div class="mb-5">
+                    <p>
+                        <strong>Slider</strong> is a reusable angular component. You can use the default template or pass your custom template following some configurations.
+                    </p>
+                    <div class="row">
+                        <div class="col-4">
+                            <h6>Default template</h6>
+                            <code>
+                                &lt;slider-widget<br>                                  
+                                &nbsp;&nbsp;&nbsp;&nbsp;[slideList]="list"&gt;<br>
+                                &lt;/slider-widget&gt;
+                            </code>
+                        </div>
+                        <div class="col-4">
+                            <h6>Custom template</h6>
+                            <code>
+                                &lt;slider-widget<br>                                  
+                                &nbsp;&nbsp;&nbsp;&nbsp;[slideList]="list"&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[slideWidth]="300"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[paginatorArrowNext]="'fa fa-arrow-circle-o-right fa-4x'"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[paginatorArrowPrev]="'fa fa-arrow-circle-o-left fa-4x'"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[paginatorTemplate]="'templateOne'"&gt;<br>
+                                &lt;/slider-widget&gt;
+                            </code>
+                        </div>
+                        <div class="col-4">
+                            <h6>Custom dynamic template</h6>
+                            <code>
+                                &lt;slider-widget<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[slideWidth]="300"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[paginatorArrowNext]="'fa fa-arrow-circle-o-right fa-4x'"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[paginatorArrowPrev]="'fa fa-arrow-circle-o-left fa-4x'"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[paginatorTemplate]="'templateOne'"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;[slideList]="list"&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;ng-template<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#customTemplate<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let-slide="slide"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let-first="first"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let-last="last"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let-index="index"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let-activeIndex="activeIndex"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let-direction="direction"&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;slider-video-card <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[slide]="slide" <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[index]="index"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[activeIndex]="activeIndex"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[first]="first"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[last]="last"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[direction]="direction"&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/slider-video-card&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ng-template&gt;<br>
+                                &lt;/slider-widget&gt;
+                            </code>
+                        </div>
+                    </div>                                     
+                </div>
+                <div>
+                    <p>
+                        You can choose which type of <strong>paginator</strong> to use, there are three different types.
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <figure>
+                                <figcaption class="mb-2">Default</figcaption>
+                                <img class="img-fluid" src="./images/paginator-default.png">     
+                                <code>
+                                    &lt;slider-widget<br>                                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;[slideList]="caroselSlides"&gt;<br>       
+                                    &lt;/slider-widget&gt;
+                                </code>                           
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <figure>
+                                <figcaption class="mb-2">Template one</figcaption>
+                                <img class="img-fluid" src="./images/paginator-template-one.png">
+                                <code>
+                                    &lt;slider-widget<br> 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;[paginatorTemplate]="'templateOne'"<br>                                       
+                                    &nbsp;&nbsp;&nbsp;&nbsp;[slideList]="caroselSlides"&gt;<br>       
+                                    &lt;/slider-widget&gt;
+                                </code>                                                           
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <figure>
+                                <figcaption class="mb-2">Template two</figcaption>
+                                <img class="img-fluid" src="./images/paginator-template-two.png">   
+                                <code>
+                                    &lt;slider-widget<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;[paginatorTemplate]="'templateTwo'"<br>                                        
+                                    &nbsp;&nbsp;&nbsp;&nbsp;[slideList]="caroselSlides"&gt;<br>         
+                                    &lt;/slider-widget&gt;
+                                </code>                                                        
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-5">                
+                <h4 class="mb-2 text-uppercase">USAGE</h4>
+                <ul>
+                    <li>Import in your module <strong>SliderModule</strong></li>
+                    <li>Use slider selector to show it 
+                        <code>
+                            &lt;slider-widget&gt;&lt;/slider-widget&gt;
+                        </code>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-5">
+                <h4 class="mb-2 text-uppercase">CONFIGURATION</h4>
+
+                <p>
+                    Slider Widget accept only Slide object type array.                    
+                </p>
+            </div>
+
+
+            <div class="mb-5">
+                <h4 class="mb-2 text-uppercase">INTERFACE</h4>                
+                <p>Convert your array in an Slide object array. As you can see, not all properties are  required.</p>
+                <code>
+                    interface Slide {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;link?: string;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mediaSrc: string;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tag?: string;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;title: string;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;description?: string;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;cta?: string;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;parag?: string;<br>
+                    }
+                </code>                
+            </div>
+
+            <div class="mb-5">
+                <h4 class="mb-2 text-uppercase">Properties</h4>
+
+                <table class="table table-striped">
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>
+                        <th>Definition</th>
+                        <th>Default value</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td><pre>slideList</pre></td>
+                        <td><pre>Array</pre></td>
+                        <td>
+                            <p>
+                                This widget expect a list of Slide to show<br><br>
+                                <strong>!</strong> If one of the non-mandatory properties is not passed in the object, 
+                                the space assigned to that property in the view will not be redirected.
+                            </p>
+                        </td>
+                        <td></td>
+                        <td>
+                            <h6>In ts file: </h6>
+                            <div>
+                                <code>
+                                    list: Slide[] = [<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link: 'string',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaSrc: 'string',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag: 'string',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: 'string 1',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description: 'string',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cta: 'string',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parag: 'string'<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    ]
+                                </code>
+                            </div><br>
+                            <h6>In html file:</h6>
+                            
+                            <code>&lt;slider-widget [slideList]="list"&gt;&lt;/slider-widge&gt;</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>slideWidth</pre></td>
+                        <td><pre>Number</pre></td>
+                        <td>
+                            <p>
+                                You can change the width of the slides which will automatically be passed in px
+                            </p>
+                        </td>
+                        <td><code>455px</code></td>
+                        <td>
+                            <code>&lt;slider-widget [slideWidth]="300"&gt;&lt;/slider-widge&gt;</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>paginatorTemplate</pre></td>
+                        <td><pre>String</pre></td>
+                        <td>
+                            <p>
+                                You can choose which type of pagination you want to use between:
+                            </p>
+                            <ul>
+                                <li>default</li>
+                                <li>templateOne</li>
+                                <li>templateTwo</li>
+                            </ul>
+                        </td>
+                        <td><code>default</code></td>
+                        <td>
+                            <code>
+                                &lt;slider-widget [paginatorTemplate]="'templateOne'"&gt;&lt;/slider-widge&gt;
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>paginatorArrowStart</pre></td>
+                        <td><pre>String</pre></td>
+                        <td><p>You can change the arrow that jumps to the first item in the list</p></td>
+                        <td><code>fa fa-angle-double-left</code></td>
+                        <td>
+                            <code>
+                                &lt;slider-widget [paginatorArrowStart]="'fa fa-arrow-circle-o-left fa-4x'"&gt;&lt;/slider-widge&gt;
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>paginatorArrowEnd</pre></td>
+                        <td><pre>String</pre></td>
+                        <td><p>You can change the arrow that jumps to the last item in the list</p></td>
+                        <td><code>fa fa-angle-double-right</code></td>
+                        <td>
+                            <code>
+                                &lt;slider-widget [paginatorArrowEnd]="'fa fa-arrow-circle-o-left fa-4x'"&gt;&lt;/slider-widge&gt;
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>paginatorArrowNext</pre></td>
+                        <td><pre>String</pre></td>
+                        <td><p>You can change the arrow that goes to the next item</p></td>
+                        <td><code>fa fa-chevron-right</code></td>
+                        <td>
+                            <code>
+                                &lt;slider-widget [paginatorArrowNext]="'fa fa-arrow-circle-o-right fa-4x'"&gt;&lt;/slider-widge&gt;
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>paginatorArrowPrev</pre></td>
+                        <td><pre>String</pre></td>
+                        <td><p>You can change the arrow that moves to the previous item</p></td>
+                        <td><code>fa fa-chevron-left</code></td>
+                        <td>
+                            <code>
+                                &lt;slider-widget [paginatorArrowPrev]="'fa fa-arrow-circle-o-left fa-4x'"&gt;&lt;/slider-widge&gt;
+                            </code>
+                        </td>
+                    </tr>                                        
+                    <tr>
+                        <td><pre>paginatorMaxVisiblePages</pre></td>
+                        <td><pre>Number</pre></td>
+                        <td>
+                            <p>
+                                If you were to use the templateTwo template, you might need this option, i.e. it allows you to tell the paginator that you want to display maximum n numbers of pages
+                            </p>
+                        </td>
+                        <td><code>5</code></td>
+                        <td>
+                            <code>
+                                &lt;slider-widget [paginatorTemplate]="'templateTwo'" [paginatorMaxVisiblePages]="5"&gt;&lt;/slider-widge>
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>customClass</pre></td>
+                        <td><pre>String</pre></td>
+                        <td>
+                            <p>
+                                You can also pass a class or a list of classes to add to the parent slide tag. It can be useful, for example, to use the default card but customize it specifically for that section
+                            </p>
+                        </td>
+                        <td></td>
+                        <td>
+                            <code>
+                                &lt;slider-widget [customClass]="'myClass'"&gt;&lt;/slider-widge&gt;
+                            </code>
+                        </td>
+                    </tr>                    
+                </table>
+
+                <h4 class="mb-2 text-uppercase">Events</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Event name</th>
+                        <th>Return</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td><pre>goNextEvent</pre></td>
+                        <td>
+                            <pre>Object</pre>
+                            <code>Es. {page: 2, direction: 'next'}</code>
+                        </td>                        
+                        <td>
+                            <p>
+                                Allows you to capture the event when the pager is used to move to the next slide
+                            </p>
+                        </td>
+                        <td>
+                            <code>
+                                &lt;slider-widget (goNextEvent)="console.log($event)"&gt;&lt;/slider-widget&gt;
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>goPrevEvent</pre></td>
+                        <td>
+                            <pre>Object</pre>
+                            <code>Es. {page: 2, direction: 'prev'}</code>
+                        </td>  
+                        <td>
+                            <p>
+                                Allows you to capture the event when the pager is used to move to the previous slide
+                            </p>
+                        </td>
+                        <td>
+                            <code>
+                                &lt;slider-widget (goPrevEvent)="console.log($event)"&gt;&lt;/slider-widget&gt;
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>goFirstEvent</pre></td>
+                        <td>
+                            <pre>Object</pre>
+                            <code>Es. {page: 1, direction: 'first'}</code>
+                        </td>  
+                        <td>
+                            <p>
+                                Allows you to capture the event when the pager is used to return to the first slide
+                            </p>
+                        </td>
+                        <td>
+                            <code>
+                                &lt;slider-widget (goFirstEvent)="console.log($event)"&gt;&lt;/slider-widget&gt;
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>goLastEvent</pre></td>
+                        <td>
+                            <pre>Object</pre>
+                            <code>Es. {page: 2, direction: 'last'}</code>
+                        </td>  
+                        <td>
+                            <p>
+                                Allows you to capture the event when the pager is used to go back to the last slide
+                            </p>
+                        </td>
+                        <td>
+                            <code>
+                                &lt;slider-widget (goLastEvent)="console.log($event)"&gt;&lt;/slider-widget&gt;
+                            </code>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="mb-5">
+                <h4 class="mb-2 text-uppercase">Examples</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <figure>
+                            <img class="img-fluid" src="./images/default-card.png">                    
+                        </figure>
+                    </div>
+                    
+                </div>   
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,12 +1,33 @@
 {
-  "name": "iladiro-angular-slider-library",
+  "name": "@iladiro/angular-slider",
   "version": "0.0.1",
+  "description": "Angular Slider plugin is flexible and easily customizable",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0"
+    "@angular/core": "^15.2.0",
+    "@fortawesome/fontawesome-free": "^6.4.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "keywords": [
+    "slider",
+    "npm",
+    "package",
+    "iladiro",
+    "typescript",
+    "angular 15",
+    "angular"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iladiro/slider"
+  },
+  "author": {
+    "name": "Iladiro",
+    "email": "dirosa.ilaria@gmail.com",
+    "url": "http://ilariadirosa.it/"
+  }
 }

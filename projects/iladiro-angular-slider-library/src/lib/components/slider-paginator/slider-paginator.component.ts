@@ -1,0 +1,123 @@
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+@Component({
+  selector: 'slider-paginator',
+  templateUrl: './slider-paginator.component.html',
+  styleUrls: ['./slider-paginator.component.scss']
+})
+export class SliderPaginatorComponent implements OnInit {
+
+  @Input() maxVisiblePages!: number;
+  @Input() totalPages!: number;
+  @Input() template!: string;
+  @Input() arrowStart!: string;
+  @Input() arrowEnd!: string;
+  @Input() arrowNext!: string;
+  @Input() arrowPrev!: string;
+  @Output() selectedPageEvent = new EventEmitter();
+
+  currentPage = 1;
+  paginatorList: number[] = [];
+
+  constructor() { }
+
+  sendEvent(direction: string): void {
+    this.selectedPageEvent.emit({
+      page: this.currentPage,
+      index: this.currentPage-1,
+      direction: direction
+    });
+  }
+
+  goTo(page: number): void {
+    const res = page > this.currentPage ? 'next' : 'prev';   
+    this.currentPage = page;    
+    this.sendEvent(res);
+  }
+
+  goNext(): void {    
+    this.currentPage += 1;
+    // da riattivare per implementazione sul template 2
+    if(this.template === 'templateTwo') {
+      this.increasePagination();
+    }
+    // end
+    this.sendEvent('next');
+  }  
+
+  goPrev(): void {
+    this.currentPage -= 1;    
+    // da riattivare per implementazione sul template 2
+    if(this.template === 'templateTwo') {          
+      this.decreasePagination();   
+    };
+    // end
+    this.sendEvent('prev');
+  }
+
+  goFirst(): void {
+    this.currentPage = 1;
+    if(this.template === 'templateTwo') {
+      this.paginatorList = this.generatePaginatorList(1, this.maxVisiblePages);          
+    }    
+    this.sendEvent('first');
+  }
+
+  goLast(): void {
+    this.currentPage = this.totalPages;
+    if(this.template === 'templateTwo') {
+      this.paginatorList = this.generatePaginatorList(this.currentPage - (this.maxVisiblePages - 1), this.currentPage);          
+    }    
+    this.sendEvent('last');
+  }
+
+  decreasePagination(): void {
+    if((this.currentPage <= this.maxVisiblePages)) {   
+      if(this.currentPage <= this.totalPages) {
+        console.log("currentPage", this.currentPage);
+        if(this.currentPage >= this.paginatorList[0]) {
+          //console.log("do not anythings");     
+        } else {            
+          //console.log("change pagination");       
+          this.paginatorList = this.generatePaginatorList(this.currentPage, this.currentPage + (this.maxVisiblePages - 1));          
+        }   
+      }             
+    }
+  }
+
+  increasePagination(): void {
+    if((this.currentPage >= this.maxVisiblePages)) {   
+      if(this.currentPage <= this.totalPages) {
+        //console.log("currentPage", this.currentPage);
+        if(this.currentPage <= this.paginatorList[this.maxVisiblePages - 1]) {
+          //console.log("do not anythings");
+        } else {
+          //console.log("change pagination");
+          this.paginatorList = this.generatePaginatorList(this.currentPage - (this.maxVisiblePages - 1), this.currentPage);          
+        }   
+      }             
+    } 
+  }
+
+  generatePaginatorList(startFrom: number, untilTo: number): number[] {
+    /* console.log("startFrom", startFrom);
+    console.log("untilTo", untilTo); */
+    let pages: number[] = [];
+    for (let i = startFrom; i <= untilTo; i++) {
+      pages.push(i);
+    };
+
+    return pages;
+  }
+
+  ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    //console.log(changes.totalPages);
+    if(this.template === 'templateTwo') {
+      if(changes['maxVisiblePages']?.currentValue) {
+        this.paginatorList = this.generatePaginatorList(1, this.maxVisiblePages ? this.maxVisiblePages : this.totalPages);
+      } 
+    }       
+  }
+
+}

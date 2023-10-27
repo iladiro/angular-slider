@@ -1,0 +1,33 @@
+@import '../../styles/mixin.scss';
+
+.slider-paginator {
+    list-style: none;
+    @include flex();
+    @include flex-align(center);    
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 0;
+    &--default {
+        @include justify-content(center);
+    }
+    &--templateOne {
+        @include justify-content(space-between);
+    }
+    &__item {
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__button {
+        cursor: pointer;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        color: #003489;
+        &[disabled] {
+            cursor: unset;
+            opacity: 0.5;
+        }
+    }
+}
