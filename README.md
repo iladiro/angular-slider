@@ -95,13 +95,13 @@ You can choose which type of <strong>paginator</strong> to use, there are three 
 <pre>
     <div style="display: flex">
         <div>
-            <img src="./projects/slider/src/lib/documentation/images/paginator-default.png">
+            <img src="./projects/iladiro-angular-slider-library/src/lib/documentation/images/paginator-default.png">
         </div>
         <div>
-            <img src="./projects/slider/src/lib/documentation/images/paginator-template-one.png">
+            <img src="./projects/iladiro-angular-slider-library/src/lib/documentation/images/paginator-template-one.png">
         </div>
         <div>
-            <img src="./projects/slider/src/lib/documentation/images/paginator-template-two.png">
+            <img src="./projects/iladiro-angular-slider-library/src/lib/documentation/images/paginator-template-two.png">
         </div>
     </div>
 </pre>
