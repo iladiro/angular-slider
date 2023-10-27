@@ -23,8 +23,8 @@ export class IladiroAngularSliderComponent implements OnChanges, AfterViewInit {
   @Input() paginatorTemplate = 'default';
   @Input() paginatorArrowStart = 'fa fa-angle-double-left';
   @Input() paginatorArrowEnd = 'fa fa-angle-double-right';
-  @Input() paginatorArrowNext = 'fa fa-chevron-left';
-  @Input() paginatorArrowPrev = 'fa fa-chevron-right';
+  @Input() paginatorArrowNext = 'fa fa-chevron-right';
+  @Input() paginatorArrowPrev = 'fa fa-chevron-left';
   @Input() paginatorMaxVisiblePages = 5;
 
   @Output() goNextEvent = new EventEmitter();

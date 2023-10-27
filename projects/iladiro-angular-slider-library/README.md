@@ -92,7 +92,7 @@ Import IladiroAngularSlide from ```import { IladiroAngularSlide } from '@iladiro
 You can choose which type of <strong>paginator</strong> to use, there are three different types.
 * default
 * templateOne
-* templatetwo
+* templateTwo
 
 <pre>
     <div style="display: flex">
@@ -114,9 +114,9 @@ You can choose which type of <strong>paginator</strong> to use, there are three 
 
   property | type | required | default | notes
   ------------ | ------------- | ------------- | ------------- | -------------
-  slideList | ``` Array ``` | yes | ``` undefined ``` | This widget expect a list of Slide to show it.                                                         
+  slideList | ``` Array<IladiroAngularSlide> ``` | yes | ``` undefined ``` | This widget expect a list of Slide to show it.                                                         
   maxVisibleSlides | ``` Number ``` | no | ``` undefined ``` | You can choose how many slides to show at a time
-  paginatorTemplate | ``` String ``` | no | ``` undefined ``` | You can choose which type of pagination you want to use between: default, templateOne, templateTwo
+  paginatorTemplate | ``` String ``` | no | ``` default ``` | You can choose which type of pagination you want to use between: default, templateOne, templateTwo
   paginatorArrowStart | ``` String ``` | no | ``` fa fa-angle-double-left ``` | You can change the arrow that jumps to the first item in the list
   paginatorArrowEnd | ``` String ``` | no | ``` fa fa-angle-double-right ``` | You can change the arrow that jumps to the last item in the list
   paginatorArrowNext | ``` String ``` | no | ``` fa fa-chevron-right ``` | You can change the arrow that goes to the next item
