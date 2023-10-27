@@ -20,12 +20,12 @@ export class IladiroAngularSliderComponent implements AfterViewInit {
   @Input() maxVisibleSlides!: number;
 
   // Paginator config
-  @Input() paginatorTemplate = 'default';
-  @Input() paginatorArrowStart = 'fa fa-angle-double-left';
-  @Input() paginatorArrowEnd = 'fa fa-angle-double-right';
-  @Input() paginatorArrowNext = 'fa fa-chevron-right';
-  @Input() paginatorArrowPrev = 'fa fa-chevron-left';
-  @Input() paginatorMaxVisiblePages = 5;
+  @Input() paginatorTemplate!: string;
+  @Input() paginatorArrowStart!: string;
+  @Input() paginatorArrowEnd!: string;
+  @Input() paginatorArrowNext!: string;
+  @Input() paginatorArrowPrev!: string;
+  @Input() paginatorMaxVisiblePages!: number;
 
   @Output() goNextEvent = new EventEmitter();
   @Output() goPrevEvent = new EventEmitter();

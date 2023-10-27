@@ -6,13 +6,13 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 })
 export class IladiroAngularSliderPaginatorComponent implements OnChanges {
 
-  @Input() maxVisiblePages!: number;
   @Input() totalPages!: number;
-  @Input() template!: string;
-  @Input() arrowStart!: string;
-  @Input() arrowEnd!: string;
-  @Input() arrowNext!: string;
-  @Input() arrowPrev!: string;
+  @Input() maxVisiblePages = 5;
+  @Input() template = 'default';
+  @Input() arrowStart = 'fa fa-angle-double-left';
+  @Input() arrowEnd = 'fa fa-angle-double-right';
+  @Input() arrowNext = 'fa fa-chevron-right';
+  @Input() arrowPrev = 'fa fa-chevron-left';
   @Output() selectedPageEvent = new EventEmitter();
 
   currentPage = 1;
