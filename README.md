@@ -1,9 +1,6 @@
-# IladiroAngularSliderLibrary
+# IladiroAngularSliderLibrary Documentation
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
-
-# Slider Documentation
-
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.<br><br>
 Angular Slider plugin is flexible and easily customizable
 
 ## Description
