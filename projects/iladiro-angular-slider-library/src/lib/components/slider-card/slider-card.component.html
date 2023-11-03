@@ -5,7 +5,7 @@
             {{slide.tag}}
         </figcaption>
     </figure>
-    <div class="iladiro-angular-slider-card__body" *ngIf="slide.title || slide.link || slide.description">
+    <div class="iladiro-angular-slider-card__body" *ngIf="slide.title || slide.description">
         <h1 class="iladiro-angular-slider-card__body--title" *ngIf="slide.title">{{slide.title}}</h1>
         <p class="iladiro-angular-slider-card__body--description" *ngIf="slide.description">{{slide.description}}</p>
         <a [href]="slide.link" target="_blank" class="iladiro-angular-slider-card__body--cta" *ngIf="slide.link">
