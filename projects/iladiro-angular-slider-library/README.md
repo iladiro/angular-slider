@@ -1,6 +1,9 @@
 # IladiroAngularSliderLibrary Documentation
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.<br><br>
+This library is compatible with Angular versions >=15.0.0.0
+
+Note: Please use version from 0.0.8, which is compatible with Angular versions >=15.0.0, older versions are only compatible with Angular version ^15.2.0. It was my mistake! Thank you<br><br>
+
 Angular Slider plugin is flexible and easily customizable
 
 ## Description
@@ -10,7 +13,7 @@ You can use the default template or pass your custom template following some con
 
 ## Before start
 1. npm i @iladiro/angular-slider<br>
-1. Make sure to install ```"@fortawesome/fontawesome-free": "^6.4.0"```
+1. Make sure to install ```@fortawesome/fontawesome-free```
 1. And import in your style ```@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';```
 1. Import ```IladiroAngularSliderLibraryModule``` into your module from ```import { IladiroAngularSliderLibraryModule } from '@iladiro/angular-slider';```
 

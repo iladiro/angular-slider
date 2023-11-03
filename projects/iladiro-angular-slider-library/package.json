@@ -1,18 +1,14 @@
 {
   "name": "@iladiro/angular-slider",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Angular Slider plugin is flexible and easily customizable",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0",
-    "@fortawesome/fontawesome-free": "^6.4.0"
+    "@angular/common": ">=15.0.0",
+    "@angular/core": ">=15.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0"
   },
   "sideEffects": false,
   "private": false,
