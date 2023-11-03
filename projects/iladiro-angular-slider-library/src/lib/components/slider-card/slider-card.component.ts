@@ -19,7 +19,7 @@ export class IladiroAngularSliderCardComponent implements OnChanges {
 
   activeClass!: string;
 
-  onClick() {
+  clickOnSlide() {
     this.clickSlideEvent.emit()
   }
 

@@ -1,4 +1,4 @@
-<div (click)="onClick()" class="iladiro-angular-slider-card {{activeClass}}" [class]="clickableSlide ? 'clickable' : ''">
+<div (click)="clickOnSlide()" class="iladiro-angular-slider-card {{activeClass}}" [class]="clickableSlide ? 'clickable' : ''">
     <figure class="iladiro-angular-slider-card__figure" *ngIf="slide?.mediaSrc">
         <img class="iladiro-angular-slider-card__figure-image" [src]="slide.mediaSrc" [alt]="slide.tag" *ngIf="slide?.mediaSrc">
         <figcaption class="iladiro-angular-slider-card__figure-label text-uppercase" *ngIf="slide?.tag">
