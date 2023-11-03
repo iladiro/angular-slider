@@ -2,7 +2,7 @@
 
 This library is compatible with Angular versions >=15.0.0
 
-Note: Please use version from 0.0.8, which is compatible with Angular versions >=15.0.0, older versions are only compatible with Angular version ^15.2.0. It was my mistake! Thank you<br><br>
+Note: Please use version from 0.0.9, which is compatible with Angular versions >=15.0.0, older versions are only compatible with Angular version ^15.2.0. It was my mistake! Thank you<br><br>
 
 Angular Slider plugin is flexible and easily customizable
 
@@ -13,8 +13,6 @@ You can use the default template or pass your custom template following some con
 
 ## Before start
 1. npm i @iladiro/angular-slider<br>
-1. Make sure to install ```@fortawesome/fontawesome-free```
-1. And import in your style ```@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';```
 1. Import ```IladiroAngularSliderLibraryModule``` into your module from ```import { IladiroAngularSliderLibraryModule } from '@iladiro/angular-slider';```
 
 ## Getting Setup
@@ -25,15 +23,17 @@ You can use the default template or pass your custom template following some con
     
     <iladiro-angular-slider [slideList]="list"></iladiro-angular-slider>
 
+  Note: As default I used font awesome icons, but you can use which icons you prefer
+
 ## Interface
-Convert your array in an Slide object array. As you can see, not all properties are required.<br><br>
+Convert your array in an Slide object array. As you can see, all properties are not required.<br><br>
 Import IladiroAngularSlide from ```import { IladiroAngularSlide } from '@iladiro/angular-slider/lib/interfaces/slide.interface';```
 
     interface IladiroAngularSlide {
         link?: string;
-        mediaSrc: string;
+        mediaSrc?: string;
         tag?: string;
-        title: string;
+        title?: string;
         description?: string;
         cta?: string;
     }
@@ -126,6 +126,7 @@ You can choose which type of <strong>paginator</strong> to use, there are three 
   paginatorArrowPrev | ``` String ``` | no | ``` fa fa-chevron-left ``` | You can change the arrow that moves to the previous item
   paginatorMaxVisiblePages | ``` Number ``` | no | ``` 5 ``` | If you were to use the templateTwo template, you might need this option, i.e. it allows you to tell the paginator that you want to display maximum n numbers of pages
   customClass | ``` String ``` | no | ``` undefined ``` | You can also pass a class or a list of classes to add to the parent slide tag. It can be useful, for example, to use the default card but customize it specifically for that section
+  clickableSlide | ``` boolean ``` | no | ``` false ``` | Set if slide is clickable or not. If set on true css cursor is type pointer
 
 ## Events
   Event name | Return | Description | Example
@@ -133,4 +134,5 @@ You can choose which type of <strong>paginator</strong> to use, there are three 
   goNextEvent | ``` Object Es. {page: 2, direction: 'next'} ``` | Allows you to capture the event when the pager is used to move to the next slide | ```<iladiro-angular-slider (goNextEvent)="console.log($event)"></iladiro-angular-slider>```
   goPrevEvent | ``` Object Es. {page: 2, direction: 'prev'} ``` | Allows you to capture the event when the pager is used to move to the previous slide | ```<iladiro-angular-slider (goPrevEvent)="console.log($event)"></iladiro-angular-slider>```
   goFirstEvent | ``` Object Es. {page: 2, direction: 'first'} ``` | Allows you to capture the event when the pager is used to return to the first slide | ```<iladiro-angular-slider (goFirstEvent)="console.log($event)"></iladiro-angular-slider>```
-  goLastEvent | ``` Object Es. {page: 2, direction: 'last'} ``` | Allows you to capture the event when the pager is used to go back to the last slide | ```<iladiro-angular-slider (goLastEvent)="console.log($event)"></iladiro-angular-slider>```
+  goLastEvent | ``` Object Es. {page: 2, direction: 'last'} ``` | Allows you to capture the event when the pager is used to go to the last slide | ```<iladiro-angular-slider (goLastEvent)="console.log($event)"></iladiro-angular-slider>```
+  clickSlideEvent | ``` Object of IladiroAngularSlide ``` | Allows you to capture the event when user click on Slide | ```<iladiro-angular-slider (clickSlideEvent)="console.log($event)"></iladiro-angular-slider>```

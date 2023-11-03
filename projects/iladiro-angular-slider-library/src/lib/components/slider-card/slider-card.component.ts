@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { IladiroAngularSlide } from '../../interfaces/slide.interface';
 
 @Component({
@@ -14,8 +14,14 @@ export class IladiroAngularSliderCardComponent implements OnChanges {
   @Input() first!: boolean;
   @Input() last!: boolean;
   @Input() direction!: string;
+  @Input() clickableSlide!: boolean;
+  @Output() clickSlideEvent = new EventEmitter();
 
   activeClass!: string;
+
+  onClick() {
+    this.clickSlideEvent.emit()
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['activeIndex'].currentValue === this.index) {      

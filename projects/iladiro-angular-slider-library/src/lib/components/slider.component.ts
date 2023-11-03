@@ -26,11 +26,13 @@ export class IladiroAngularSliderComponent implements OnChanges, AfterViewInit {
   @Input() paginatorArrowNext = 'fa fa-chevron-right';
   @Input() paginatorArrowPrev = 'fa fa-chevron-left';
   @Input() paginatorMaxVisiblePages = 5;
+  @Input() clickableSlide = false;
 
   @Output() goNextEvent = new EventEmitter();
   @Output() goPrevEvent = new EventEmitter();
   @Output() goFirstEvent = new EventEmitter();
   @Output() goLastEvent = new EventEmitter();
+  @Output() clickSlideEvent = new EventEmitter();
 
   activeIndex = 0;
   currentDirection!: string;
@@ -43,6 +45,10 @@ export class IladiroAngularSliderComponent implements OnChanges, AfterViewInit {
   @ContentChild('customTemplate') customTemplate!: TemplateRef<any>;
   
   constructor(public cdRef: ChangeDetectorRef) { }
+
+  clickOnSlide(slide: IladiroAngularSlide) {
+    this.clickSlideEvent.emit(slide);
+  }
 
   setSlideByIndex(config: IladiroAngularConfigSlider): void {    
     this.items.forEach(item => {  
@@ -89,7 +95,6 @@ export class IladiroAngularSliderComponent implements OnChanges, AfterViewInit {
 
   ngAfterViewInit() {
     if(this.maxVisibleSlides) {
-      console.log("entrato");
       this.wrapperWidth = this.sliderWrap?.nativeElement?.clientWidth;
       if(this.slideList.length > this.maxVisibleSlides) {
         if(this.maxVisibleSlides > 1) {

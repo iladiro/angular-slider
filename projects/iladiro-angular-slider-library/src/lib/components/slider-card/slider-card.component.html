@@ -1,13 +1,13 @@
-<a [href]="slide.link" class="iladiro-angular-slider-card {{activeClass}}">
-    <figure class="iladiro-angular-slider-card__figure">
+<div (click)="onClick()" class="iladiro-angular-slider-card {{activeClass}}" [class]="clickableSlide ? 'clickable' : ''">
+    <figure class="iladiro-angular-slider-card__figure" *ngIf="slide?.mediaSrc">
         <img class="iladiro-angular-slider-card__figure-image" [src]="slide.mediaSrc" [alt]="slide.tag" *ngIf="slide?.mediaSrc">
         <figcaption class="iladiro-angular-slider-card__figure-label text-uppercase" *ngIf="slide?.tag">
             {{slide.tag}}
         </figcaption>
     </figure>
-    <div class="iladiro-angular-slider-card__body" *ngIf="slide.title || slide.link">
+    <div class="iladiro-angular-slider-card__body" *ngIf="slide.title || slide.link || slide.description">
         <h1 class="iladiro-angular-slider-card__body--title" *ngIf="slide.title">{{slide.title}}</h1>
-        <p class="iladiro-angular-slider-card__body--description">{{slide.description}}</p>
+        <p class="iladiro-angular-slider-card__body--description" *ngIf="slide.description">{{slide.description}}</p>
         <a [href]="slide.link" target="_blank" class="iladiro-angular-slider-card__body--cta" *ngIf="slide.link">
             <ng-container *ngIf="slide?.cta; else defaultCta">
                 {{slide.cta}}
@@ -17,4 +17,4 @@
             </ng-template>
         </a>
     </div>    
-</a>
+</div>

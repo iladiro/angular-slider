@@ -17,7 +17,9 @@
                             last: last, 
                             index: i, 
                             activeIndex: activeIndex, 
-                            direction: currentDirection
+                            direction: currentDirection,
+                            clickableSlide: clickableSlide,
+                            clickSlideEvent: clickOnSlide(slide)
                         }">
                     </ng-container>
                     <ng-template #defaultTemplate>
@@ -27,7 +29,9 @@
                             [activeIndex]="activeIndex"
                             [first]="first"
                             [last]="last"
-                            [direction]="currentDirection">
+                            [direction]="currentDirection"
+                            [clickableSlide]="clickableSlide"
+                            (clickSlideEvent)="clickOnSlide(slide)">
                         </iladiro-angular-slider-card> 
                     </ng-template>                                           
                 </div>
