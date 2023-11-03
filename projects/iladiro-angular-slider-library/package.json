@@ -1,6 +1,6 @@
 {
   "name": "@iladiro/angular-slider",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Angular Slider plugin is flexible and easily customizable",
   "license": "MIT",
   "peerDependencies": {
